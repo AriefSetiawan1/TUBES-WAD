@@ -46,4 +46,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the catatan konseling for the user.
+     */
+    public function catatan()
+    {
+        return $this->hasMany(CatatanKonseling::class);
+    }
 }
