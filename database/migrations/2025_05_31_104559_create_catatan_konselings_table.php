@@ -7,12 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migration.
      */
     public function up(): void
     {
         Schema::create('catatan_konselings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->string('nama_pasien');
+            $table->string('judul');
+            $table->text('isi');
+            $table->date('tanggal_konseling')->nullable(); 
             $table->timestamps();
         });
     }

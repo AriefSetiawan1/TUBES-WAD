@@ -58,13 +58,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/konselor/jadwal/{id}', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
 
         // Catatan
-        Route::resource('/konselor/catatan', CatatanController::class)->names('catatan');
-        Route::get('/konselor/catatan', [CatatanController::class, 'index'])->name('catatan.index');
-        Route::get('/konselor/catatan/create', [CatatanController::class, 'create'])->name('catatan.create');
-        Route::post('/konselor/catatan', [CatatanController::class, 'store'])->name('catatan.store');
-        Route::get('/konselor/catatan/{id}/edit', [CatatanController::class, 'edit'])->name('catatan.edit');
-        Route::put('/konselor/catatan/{id}', [CatatanController::class, 'update'])->name('catatan.update');
-        Route::delete('/konselor/catatan/{id}', [CatatanController::class, 'destroy'])->name('catatan.destroy');
+        Route::resource('/konselor/catatan', CatatanController::class)->names('konselor.catatan');
 
         // Artikel
         Route::resource('/konselor/artikel', ArtikelController::class)->names('artikel');
