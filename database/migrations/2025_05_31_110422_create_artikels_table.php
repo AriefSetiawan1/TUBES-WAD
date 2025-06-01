@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('artikels', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Primary key
+            $table->string('author'); // Nama author
+            $table->text('content');  // Isi artikel
+            $table->string('image')->nullable(); // Gambar (optional)
+            $table->year('publication_year'); // Tahun terbit
             $table->timestamps();
         });
     }
