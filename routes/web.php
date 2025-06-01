@@ -34,6 +34,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         // PemesananKonseling
         Route::get('/mahasiswa/pemesanan', [PemesananController::class, 'index'])->name('pemesanan.index');
         Route::post('/mahasiswa/pemesanan/{id}', [PemesananController::class, 'store'])->name('pemesanan.store');
+        Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan.index');
+
 
         // Artikel
         Route::get('/artikel', [ArtikelPublikController::class, 'index'])->name('artikel.publik');
